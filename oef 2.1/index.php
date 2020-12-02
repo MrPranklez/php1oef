@@ -11,25 +11,33 @@
 <body>
 
 <div class="jumbotron text-center">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p>
+    <h1>Leuke plekken in Europa</h1>
+    <p>Tips voor citytrips voor vrolijke vakantiegangers</p>
 </div>
 
 <div class="container">
     <div class="row">
+
         <?php
-        $imgs = array("img1","img2","img3");
-        $col=0;
-        foreach ($imgs as $img) {
-            $col++;
-            print "<div class='col-sm-4'>";
-            print "<h3>Column $col</h3>";
-            print "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>";
-            print "<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>";
-            print "<img class='img-fluid' src='./img/$img.jpg'>";
-            print "</div>";
-        };
+
+        $rows = GetData( "select * from images" );
+
+        //loop over de afbeeldingen
+        foreach ( $rows as $row )
+        {
+            $link_image = "img/" . $row['img_filename'];
+
+            //de kolom met de titel en de afbeelding erin
+            print '<div class="col-sm-4">';
+            print '<h3>' . $row['img_title'] . '</h3>';
+            print '<p>' .  $row['img_width'] . " x " . $row['img_height'] . ' pixels</p>';
+            print '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>';
+            print '<img class="img-fluid" src="' . $link_image . '">';
+            print '</div>' ;
+        }
+
         ?>
+
     </div>
 </div>
 
