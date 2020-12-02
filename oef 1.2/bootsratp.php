@@ -18,21 +18,18 @@
 <div class="container">
     <div class="row">
         <?php
-        $images = array("stad1", "stad2", "stad3");
-
-        function imagesincolumns($imagescity){
-            $column = 0;
-            foreach($imagescity as $image){
-                $column = $column + 1;
-                echo "<div class='col-sm-4'>";
-        echo "<h3>Column $column</h3>";
-        echo "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>";
-        echo "<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>";
-        echo "<img width='100%' height='180px' src='img/$image.jpg' alt='pictures'></img>";
-        echo "</div>";
-    }
-    }
-    ?>
+        $imgs = array("img1","img2","img3");
+        $col=0;
+        foreach ($imgs as $img) {
+            $col++;
+            print "<div class='col-sm-4'>";
+            print "<h3>Column $col</h3>";
+            print "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>";
+            print "<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>";
+            print "<img class='img-fluid' src='./img/$img.jpg'>";
+            print "</div>";
+        };
+        ?>
     </div>
 </div>
 
