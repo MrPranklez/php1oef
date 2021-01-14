@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "steven123";
+$servername = "syntra.kinnart.cloud";
+$username = "syntra-root";
+$password = "Syntrapvkk2021!";
 $dbname = "steden";
